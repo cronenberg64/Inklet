@@ -1,97 +1,105 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Inklet - Cross-Platform Ebook Reader
 
-# Getting Started
+Inklet is a modern, cross-platform ebook reader built with React Native. It provides a clean and intuitive interface for reading various ebook formats on both Android and iOS devices.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+- Support for multiple ebook formats (ePub, PDF, TXT)
+- Dark mode support
+- Customizable font size and reading preferences
+- Local storage for books and reading progress
+- Bookmarking functionality
+- Reading progress tracking
+- Clean and intuitive user interface
+- Cross-platform compatibility (iOS & Android)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Tech Stack
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- React Native
+- TypeScript
+- Zustand (State Management)
+- React Navigation
+- NativeWind (Tailwind CSS for React Native)
+- React Native Vector Icons
+- AsyncStorage for local data persistence
 
-```sh
-# Using npm
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+- React Native development environment set up
+- Xcode (for iOS development)
+- Android Studio (for Android development)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/inklet.git
+cd inklet
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Install iOS dependencies:
+```bash
+cd ios && pod install && cd ..
+```
+
+4. Start the development server:
+```bash
 npm start
-
-# OR using Yarn
+# or
 yarn start
 ```
 
-## Step 2: Build and run your app
+5. Run the app:
+```bash
+# For iOS
+npm run ios
+# or
+yarn ios
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
+# For Android
 npm run android
-
-# OR using Yarn
+# or
 yarn android
 ```
 
-### iOS
+## Project Structure
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```
+src/
+├── assets/         # Images, fonts, and other static assets
+├── components/     # Reusable UI components
+├── constants/      # App constants and configuration
+├── hooks/          # Custom React hooks
+├── screens/        # Screen components
+├── services/       # Business logic and API services
+├── store/          # State management (Zustand)
+└── utils/          # Utility functions and helpers
 ```
 
-Then, and every time you update your native dependencies, run:
+## Contributing
 
-```sh
-bundle exec pod install
-```
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## License
 
-```sh
-# Using npm
-npm run ios
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-# OR using Yarn
-yarn ios
-```
+## Acknowledgments
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- React Native community
+- All contributors and supporters of the project 
