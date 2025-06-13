@@ -1,12 +1,13 @@
 export type RootStackParamList = {
   Home: undefined;
-  Notes: undefined;
+  Library: undefined;
+  Reader: { bookId: string };
+  AddBook: undefined;
   Settings: undefined;
-  NoteDetail: { noteId: string };
 };
 
 export type TabParamList = {
   HomeTab: undefined;
-  NotesTab: undefined;
+  LibraryTab: undefined;
   SettingsTab: undefined;
 }; 

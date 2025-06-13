@@ -2,7 +2,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const StorageKeys = {
   USER_PREFERENCES: '@inklet:userPreferences',
-  NOTES: '@inklet:notes',
+  BOOKS: '@inklet:books',
+  READING_PROGRESS: '@inklet:readingProgress',
   THEME: '@inklet:theme',
 } as const;
 

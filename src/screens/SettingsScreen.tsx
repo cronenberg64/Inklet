@@ -31,6 +31,25 @@ export const SettingsScreen: React.FC = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Reading</Text>
+        {renderSettingItem(
+          'text',
+          'Default Font Size',
+          <Text style={styles.settingValue}>16px</Text>,
+        )}
+        {renderSettingItem(
+          'color-palette',
+          'Reading Theme',
+          <Text style={styles.settingValue}>Light</Text>,
+        )}
+        {renderSettingItem(
+          'time',
+          'Auto-scroll Speed',
+          <Text style={styles.settingValue}>Normal</Text>,
+        )}
+      </View>
+
+      <View style={styles.section}>
         <Text style={styles.sectionTitle}>Appearance</Text>
         {renderSettingItem(
           'moon',
@@ -44,21 +63,26 @@ export const SettingsScreen: React.FC = () => {
         )}
         {renderSettingItem(
           'color-palette',
-          'Theme Color',
+          'Accent Color',
           <Icon name="chevron-forward" size={24} color={COLORS.gray} />,
         )}
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Notes</Text>
+        <Text style={styles.sectionTitle}>Library</Text>
         {renderSettingItem(
           'cloud-upload',
-          'Backup Notes',
+          'Backup Library',
           <Icon name="chevron-forward" size={24} color={COLORS.gray} />,
         )}
         {renderSettingItem(
           'cloud-download',
-          'Restore Notes',
+          'Restore Library',
+          <Icon name="chevron-forward" size={24} color={COLORS.gray} />,
+        )}
+        {renderSettingItem(
+          'trash',
+          'Clear Cache',
           <Icon name="chevron-forward" size={24} color={COLORS.gray} />,
         )}
       </View>

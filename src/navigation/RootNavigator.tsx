@@ -2,13 +2,14 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { HomeScreen } from '../screens/HomeScreen';
-import { NotesScreen } from '../screens/NotesScreen';
-import { NoteDetailScreen } from '../screens/NoteDetailScreen';
+import { LibraryScreen } from '../screens/LibraryScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
+import { ReaderScreen } from '../screens/ReaderScreen';
+import { AddBookScreen } from '../screens/AddBookScreen';
 import { RootStackParamList, TabParamList } from './types';
 import { COLORS } from '../constants/theme';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -18,20 +19,14 @@ const TabNavigator = () => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          let iconName: string;
+          let iconName: string = 'help-outline';
 
-          switch (route.name) {
-            case 'HomeTab':
-              iconName = focused ? 'home' : 'home-outline';
-              break;
-            case 'NotesTab':
-              iconName = focused ? 'document-text' : 'document-text-outline';
-              break;
-            case 'SettingsTab':
-              iconName = focused ? 'settings' : 'settings-outline';
-              break;
-            default:
-              iconName = 'help-outline';
+          if (route.name === 'HomeTab') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'LibraryTab') {
+            iconName = focused ? 'library' : 'library-outline';
+          } else if (route.name === 'SettingsTab') {
+            iconName = focused ? 'settings' : 'settings-outline';
           }
 
           return <Icon name={iconName} size={size} color={color} />;
@@ -44,23 +39,17 @@ const TabNavigator = () => {
       <Tab.Screen
         name="HomeTab"
         component={HomeScreen}
-        options={{
-          title: 'Home',
-        }}
+        options={{ title: 'Home' }}
       />
       <Tab.Screen
-        name="NotesTab"
-        component={NotesScreen}
-        options={{
-          title: 'Notes',
-        }}
+        name="LibraryTab"
+        component={LibraryScreen}
+        options={{ title: 'Library' }}
       />
       <Tab.Screen
         name="SettingsTab"
         component={SettingsScreen}
-        options={{
-          title: 'Settings',
-        }}
+        options={{ title: 'Settings' }}
       />
     </Tab.Navigator>
   );
@@ -71,23 +60,25 @@ export const RootNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerStyle: {
-            backgroundColor: COLORS.background,
-          },
-          headerTintColor: COLORS.text,
+          headerShown: false,
+          contentStyle: { backgroundColor: COLORS.background },
         }}
       >
+        <Stack.Screen name="Home" component={TabNavigator} />
         <Stack.Screen
-          name="Home"
-          component={TabNavigator}
-          options={{ headerShown: false }}
+          name="Reader"
+          component={ReaderScreen}
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right',
+          }}
         />
         <Stack.Screen
-          name="NoteDetail"
-          component={NoteDetailScreen}
+          name="AddBook"
+          component={AddBookScreen}
           options={{
-            title: 'Note',
             headerShown: false,
+            animation: 'slide_from_bottom',
           }}
         />
       </Stack.Navigator>
