@@ -11,14 +11,20 @@ import { WebView } from 'react-native-webview';
 import { COLORS } from '../constants/theme';
 import { fileManager } from '../utils/fileManager';
 
-interface EPUBReaderProps {
+export interface EPUBReaderProps {
   bookId: string;
-  onProgressUpdate?: (progress: number) => void;
+  onProgressUpdate: (progress: number) => void;
+  fontSize: number;
+  theme: 'light' | 'dark' | 'sepia';
+  scrollMode: 'scroll' | 'page';
 }
 
 export const EPUBReader: React.FC<EPUBReaderProps> = ({
   bookId,
   onProgressUpdate,
+  fontSize,
+  theme,
+  scrollMode,
 }) => {
   const [bookPath, setBookPath] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);

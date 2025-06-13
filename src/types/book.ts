@@ -4,24 +4,26 @@ export interface Book {
   author: string;
   coverUrl?: string;
   filePath: string;
+  fileSize: string;
+  fileType: string;
+  coverImage: string | null;
   lastReadPosition: number;
-  lastReadChapter: number;
+  lastReadTimestamp: number;
   totalChapters: number;
   currentFontSize: number;
   currentTheme: 'light' | 'dark' | 'sepia';
-  dateAdded: string;
+  dateAdded: number;
   lastOpened: string;
   progress: number; // 0-100
+  readingProgress: number;
   bookmarks: Bookmark[];
   notes: BookNote[];
 }
 
 export interface Bookmark {
   id: string;
-  chapter: number;
   position: number;
-  text: string;
-  createdAt: string;
+  timestamp: string;
 }
 
 export interface BookNote {

@@ -5,6 +5,7 @@ export const StorageKeys = {
   BOOKS: '@inklet:books',
   READING_PROGRESS: '@inklet:readingProgress',
   THEME: '@inklet:theme',
+  BOOKMARKS: '@inklet:bookmarks',
 } as const;
 
 export const storage = {
